@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Leave System</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    font-family:'Montserrat', 'sans-serif';
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+</style>
+</head>
+<body style="background-image: url('https://i.pinimg.com/originals/6e/f7/8b/6ef78b7cd9a39f7160734397487dcad3.jpg'); background-size: cover; width: 100%; height: 100vh;">
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark"
+			style="background-color: #313131;">
+			<div>
+				<a class="navbar-brand text-white font-weight-bold"> Leave Management </a>
+			</div>
+
+			<ul class="navbar-nav">
+				<li><a href="userlist.html"
+					class="nav-link">Users</a></li>
+				<li><a href="index.html" class="nav-link">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+	<br>
+	<div class="container col-md-5">
+		<div class="border rounded shadow" style="backdrop-filter: blur(20px);">
+			<div class="card-body">
+				
+					<form action="insert" method="post">
+
+				<caption>
+					<h2>
+            			Add New User
+					</h2>
+				</caption>
+				
+				<input type="hidden" name="id2">
+
+				<fieldset class="form-group">
+					<label>User Name</label> <input type="text" class="form-control"
+						name="name" required="required">
+						
+				</fieldset>
+
+				<fieldset class="form-group">
+					<label>Type of Leave</label>
+						<select class="form-control" name="tplv">
+							<option value="" selected disabled hidden>Select a Leave</option>
+							<option value="Medical Leave">Medical Leave</option>
+							<option value="Marriage Leave">Marriage Leave</option>
+							<option value="Study Leave">Study Leave</option>
+							<option value="Sabbatical Leave">Sabbatical Leave</option>
+							<option value="Parental Leave">Parental Leave</option>
+							<option value="Personal Leave">Personal Leave</option>
+						</select>
+				</fieldset>
+
+				<fieldset class="form-group">
+					<label>Status</label> 
+						<select class="form-control" name="status">
+							<option value="" selected disabled hidden>Select the Status</option>
+							<option value="Approved">Approved</option>
+							<option value="Pending">Pending</option>
+							<option value="Declined">Declined</option>
+						</select>
+				</fieldset>
+
+				<button type="submit" class="btn btn-success">Save</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

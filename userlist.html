@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Management App</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+	height: 100%;
+}
+
+body{
+    font-family:'Montserrat', 'sans-serif';
+    font-optical-sizing: auto;
+    font-style: normal;
+    height: 100%;
+}
+</style>
+</head>
+<body style="background-image: url('https://i.pinimg.com/originals/8b/be/a0/8bbea06b8b9f88358b5529748270ea57.jpg'); height: 100%; width:100vw;
+			background-position: center; background-repeat: no-repeat; background-size: cover;">
+
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark blur"
+			style="background-color: #313131;">
+			<div>
+				<a class="navbar-brand text-white font-weight-bold"> Leave Management </a>
+			</div>
+
+			<ul class="navbar-nav">
+				<li><a href="userlist.html"
+					class="nav-link">Users</a></li>
+				<li><a href="index.html" class="nav-link">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+	<br>
+
+	<div class="row">
+
+		<div class="container d-row">
+		<div class="border rounded p-3 shadow box-area" style="backdrop-filter: blur(20px);">
+			<h3 class="text-center text-white font-weight-bold" style="text-shadow: 2px 2px 8px #000000;">Summary</h3>
+			<hr>
+			<div class="container text-left">
+
+				<a href="userform.html" class="btn btn-success">Add New User</a>
+			</div>
+			<br>
+			
+			<table class="table table-bordered">
+				<thead>
+					<tr class="text-white" style="text-shadow: 2px 2px 8px #00000080;">
+						<th>ID</th>
+						<th>Name</th>
+						<th>Type of Leave</th>
+						<th>Status</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="user" items="${listUser}">
+						<tr class="text-white" style="text-shadow: 2px 2px 8px #00000080;">
+							<td><c:out value="${user.id}" /></td>
+							<td><c:out value="${user.name}" /></td>
+							<td><c:out value="${user.tplv}" /></td>
+							<td><c:out value="${user.status}" /></td>
+							<td><a href="#">Edit</a>
+								&nbsp;&nbsp;&nbsp;&nbsp; <a
+								href="#">Delete</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
